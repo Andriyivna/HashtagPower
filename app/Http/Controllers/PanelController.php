@@ -23,6 +23,7 @@ class PanelController extends Controller
      */
     public function index()
     {
-        return view('panel');
+        return \File::get(public_path() . '/assets/index.html');
+//        return view('panel');
     }
 }
