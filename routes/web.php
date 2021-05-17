@@ -20,3 +20,4 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/panel', 'PanelController@index')->name('panel');
+Route::get('/panel/{any}', 'PanelController@index')->name('panel');
