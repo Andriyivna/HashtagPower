@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
 
 @Component({
   selector: 'app-general-settings',
@@ -7,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralSettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor( private  settingsService: SettingsService) { }
+  websiteName = '';
 
-  ngOnInit(): void {
+  Save(): void {
+    this.settingsService.set('site_name', this.websiteName);
   }
 
+  update():void {
+    this.settingsService.get('site_name').then((data) => {
+      this.websiteName = data.value;
+    });
+  }
+
+
+  ngOnInit(): void {
+    this.update();
+  }
 }
 

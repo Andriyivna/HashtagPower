@@ -15,6 +15,20 @@ class SettingsService
         return self::format($result->first());
     }
 
+    public static function set($name, $value)
+    {
+        $result = Setting::where('name', $name)->get();
+        if ($result->isEmpty()) {
+            return null;
+        }
+
+        $setting = $result->first();
+        $setting->value = $value;
+        $setting->save();
+
+        return $setting;
+    }
+
     protected static function format($setting) {
        if ($setting->type == 'string') {
            return self::formatToString($setting->value);

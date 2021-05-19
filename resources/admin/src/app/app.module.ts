@@ -20,6 +20,8 @@ import { BookingServiceSettingsComponent } from './settings/booking-service-sett
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule,
     MatSidenavModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
