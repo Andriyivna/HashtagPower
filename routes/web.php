@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Services\SettingsService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'site_name' => SettingsService::get('site_name')
+    ]);
 });
 
 Auth::routes(['register' => false]);
 
-Route::get('/panel', 'PanelController@index')->name('panel');
-Route::get('/panel/{any}', 'PanelController@index')->name('panel');
+Route::get('/panel{any}', 'PanelController@index')->name('panel')->where('any', '.*');
+

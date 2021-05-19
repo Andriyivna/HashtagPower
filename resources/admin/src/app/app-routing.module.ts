@@ -4,6 +4,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { DesignComponent } from './design/design.component';
 import { SettingsComponent } from './settings/settings.component';
+import { GeneralSettingsComponent } from './settings/general-settings/general-settings.component';
+import { AccountSettingsComponent } from './settings/account-settings/account-settings.component';
+import { BookingServiceSettingsComponent } from './settings/booking-service-settings/booking-service-settings.component';
+import { CallbackServiceSettingsComponent } from './settings/callback-service-settings/callback-service-settings.component';
 
 const routes: Routes = [
   {
@@ -20,8 +24,16 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent
-  }
+    component: SettingsComponent,
+    children: [
+      {path: 'general', component: GeneralSettingsComponent},
+      {path: 'account', component: AccountSettingsComponent},
+      {path: 'booking', component: BookingServiceSettingsComponent},
+      {path: 'callback', component: CallbackServiceSettingsComponent},
+      { path: '**', redirectTo: 'general'}
+    ]
+  },
+  { path: '**', redirectTo: 'dashboard'}
 
 ];
 

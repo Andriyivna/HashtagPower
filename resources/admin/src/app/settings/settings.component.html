@@ -1,1 +1,13 @@
-<p>settings works!</p>
+<mat-drawer-container class="main-drawer">
+  <mat-drawer mode="side" opened class="drawer-menu">
+    <mat-nav-list role="navigation" class="sub-navigation ">
+      <a mat-list-item routerLink="/settings/general" routerLinkActive="active">General</a>
+      <a mat-list-item routerLink="/settings/account" routerLinkActive="active">Account</a>
+      <a mat-list-item routerLink="/settings/callback" routerLinkActive="active">Callback service</a>
+      <a mat-list-item routerLink="/settings/booking" routerLinkActive="active">Booking service</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

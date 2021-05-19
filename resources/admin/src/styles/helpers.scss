@@ -1,0 +1,30 @@
+.flex-spacer{
+  flex: 1 1 auto;
+}
+.main-drawer{
+  height: calc(100% - 64px);
+}
+.drawer-menu {
+  width: 250px;
+}
+
+.active:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+}
+.full-width{
+  width: 100%;
+}
+
+.section-wrapper{
+  max-width: 800px;
+  margin: 20px auto ;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}

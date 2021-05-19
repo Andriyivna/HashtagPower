@@ -12,6 +12,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { DesignComponent } from './design/design.component';
 import { SettingsComponent } from './settings/settings.component';
+import { GeneralSettingsComponent } from './settings/general-settings/general-settings.component';
+import { MatListModule } from '@angular/material/list';
+import { AccountSettingsComponent } from './settings/account-settings/account-settings.component';
+import { CallbackServiceSettingsComponent } from './settings/callback-service-settings/callback-service-settings.component';
+import { BookingServiceSettingsComponent } from './settings/booking-service-settings/booking-service-settings.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -20,7 +28,11 @@ import { SettingsComponent } from './settings/settings.component';
     DashboardComponent,
     ContentComponent,
     DesignComponent,
-    SettingsComponent
+    SettingsComponent,
+    GeneralSettingsComponent,
+    AccountSettingsComponent,
+    CallbackServiceSettingsComponent,
+    BookingServiceSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +42,10 @@ import { SettingsComponent } from './settings/settings.component';
     MatTabsModule,
     MatIconModule,
     MatButtonModule,
+    MatListModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
