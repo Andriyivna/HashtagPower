@@ -83,6 +83,11 @@
                 <div class="title m-b-md">
                     {{ $site_name }}
                 </div>
+                <p>{{$site_description}}</p>
+                <p>{{$contacts_company_name}}</p>
+                <p>{{$contacts_email}}</p>
+                <p>{{$contacts_telephone}}</p>
+                <p>{{$contacts_address}}</p>
             </div>
         </div>
     </body>

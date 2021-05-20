@@ -15,7 +15,12 @@ use App\Services\SettingsService;
 
 Route::get('/', function () {
     return view('welcome', [
-        'site_name' => SettingsService::get('site_name')
+        'site_name' => SettingsService::get('site_name'),
+        'site_description' => SettingsService::get('site_description'),
+        'contacts_company_name' => SettingsService::get('contacts_company_name'),
+        'contacts_email' => SettingsService::get('contacts_email'),
+        'contacts_telephone' => SettingsService::get('contacts_telephone'),
+        'contacts_address' => SettingsService::get('contacts_address')
     ]);
 });
 
