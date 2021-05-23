@@ -11,7 +11,7 @@ interface SettingsResponse {
 export class SettingsService {
 
   constructor(private http: HttpClient) { }
-  readonly ApiURL = 'http://hashtagpower.loc/api/settings/';
+  readonly ApiURL = '//hashtagpower.loc/api/settings/';
 
   set(name: string, value:any){
     return this.http.put<SettingsResponse>(this.ApiURL + name, value).toPromise()

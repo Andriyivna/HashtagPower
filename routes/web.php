@@ -28,3 +28,7 @@ Auth::routes(['register' => false]);
 
 Route::get('/panel{any}', 'PanelController@index')->name('panel')->where('any', '.*');
 
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+});

@@ -6,8 +6,11 @@
   <a mat-button routerLink="/design" routerLinkActive="mat-accent">Design</a>
   <a mat-button routerLink="/settings" routerLinkActive="mat-accent">Settings</a>
   <div class="flex-spacer"></div>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <button mat-icon-button [matMenuTriggerFor]="log_out_menu" class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>person</mat-icon>
   </button>
+  <mat-menu #log_out_menu="matMenu">
+    <a href="/logout" mat-menu-item>Log out</a>
+  </mat-menu>
 </mat-toolbar>
 <router-outlet></router-outlet>

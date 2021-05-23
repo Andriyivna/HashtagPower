@@ -1,5 +1,13 @@
 <mat-card class="section-wrapper">
   <h1>Instagram account</h1>
+  <mat-spinner *ngIf="!status" ></mat-spinner>
+
+  <div *ngIf="status==='connected'">
+
+  </div>
+  <div *ngIf="status==='not_authorized' || status==='unknown'">
+    <button mat-flat-button color="primary" (click)="FB_login()">Connect Instagram using Facebook</button>
+  </div>
 </mat-card>
 
 
